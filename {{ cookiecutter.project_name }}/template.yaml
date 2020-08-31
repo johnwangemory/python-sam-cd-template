@@ -18,7 +18,7 @@ Resources:
       Handler: {{ cookiecutter.project_name }}
       Runtime: python3.8
       Policies:
-        - {{ cookiecutter.function_name }}-policy   
+        - {{ cookiecutter.function_name }}-security-policy   
       Tracing: Active # https://docs.aws.amazon.com/lambda/latest/dg/lambda-x-ray.html
       Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
         Variables:

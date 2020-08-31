@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = {{ cookiecutter.project_name }}
+s3_bucket = {{ cookiecutter.project_name }}-bucket
+s3_prefix = {{ cookiecutter.project_name }}
+region = {{ cookiecutter.aws_region }}
+confirm_changeset = false
+capabilities = "CAPABILITY_IAM"
