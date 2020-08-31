@@ -1,0 +1,3 @@
+{
+    "project_name": "Name of the project", "function_name": "name of the function", "policy_name" : "Name of access policy for the function to write to"    
+}
