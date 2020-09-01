@@ -1,1 +1,0 @@
-aws s3 mb s3://bucket-{{ cookiecutter.project_name }} --region "{{ cookiecutter.aws_region }}"
