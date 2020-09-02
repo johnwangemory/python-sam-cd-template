@@ -74,8 +74,7 @@ In the [AWS console](http://console.aws.amazon.com), use the below steps:
 
 To learn about secrets in GitHub see the [instructions](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#creating-encrypted-secrets-for-a-repository).
 
-
-
+![GitHub Secrets](https://raw.githubusercontent.com/nirmash/python-sam-template/master/github-secrets.jpg)
 
 ## How to use
 
