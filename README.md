@@ -101,11 +101,30 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
 
 ## Verify and test
+To make sure the GitHub Action executed correctly, browse over to GitHub to the repository you just created. It takes about 2 minutes to deploy. 
+![GitHub Action](https://raw.githubusercontent.com/nirmash/python-sam-template/master/github-workflow.jpg)
+Copy the `arn` for the function (marked in the image above). Note that the function expects a JSON payload that includes an `obj_name` and `body` elements. 
+You can test your function in the AWS console or in the terminal using the AWS cli as shown below:
+
 ```shell
 aws lambda invoke \
-    --function-name arn:aws:lambda:us-west-2:070336696256:function:MyLambdaFunc-LambdaFunc-CJKJKYHIT6WY \
+    --function-name <your function arn> \
     --invocation-type RequestResponse \
     --payload '{ "obj_name": "Bob", "body" : "brr" }' \
     --cli-binary-format raw-in-base64-out \
     response.json
 ```
+The response from the function should look like:
+
+```shell
+{
+    "StatusCode": 200,
+    "ExecutedVersion": "$LATEST"
+}
+```
+The function response is saved into the `response.json` file. To see the content of the file, type:
+```shell
+$ cat response.json
+{"message": "Hello Bob brr!"}
+```
+Moving forward, any change you make to your repository and push to the master branch in GitHub will be redeployed to AWS. You can add more components to your AWS application by changing the `template.yaml` file (more information [here](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-template-anatomy.html)). You can add more CI\CD rules by changing the `deploy.yml` file located under the `.github/workflows` folder in your repository (more information [here](https://docs.github.com/en/actions))
