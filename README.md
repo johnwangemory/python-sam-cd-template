@@ -1,4 +1,4 @@
-# Python SAM template that uses GitHub actions for CI\C
+# Python SAM template that uses GitHub actions for CI\CD
 
 This is a [Cookiecutter](https://github.com/audreyr/cookiecutter) template to create a Serverless App based on Serverless Application Model (SAM).
 
@@ -72,7 +72,7 @@ In the [AWS console](http://console.aws.amazon.com), use the below steps:
 * Click **Create Access Key**
 * Click **Show User Security Credentials**
 
-To learn about secrets in GitHub see the [instructions](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#creating-encrypted-secrets-for-a-repository)).
+To learn about secrets in GitHub see the [instructions](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#creating-encrypted-secrets-for-a-repository).
 
 
 
