@@ -76,13 +76,34 @@ To learn about secrets in GitHub see the [instructions](https://docs.github.com/
 
 ![GitHub Secrets](https://raw.githubusercontent.com/nirmash/python-sam-template/master/github-secrets.jpg)
 
-## How to use
+Save the git repository URL, it is the URL of the repository you just created and configured with followed by `.git`. The format looks like: 
+```shell
+https://github.com/<user name>/<repo name>.git
+```
 
+### Push the code to GitHub
+Once the secrets are configured, it is time to push code to GitHub. Back in the terminal type the below: 
+```bash
+$ git remote add origin https://github.com/<user name>/<repo name>.git
+$ git branch -M master
+$ git push -u origin master
+```
+You should see the output below: 
+```bash
+Counting objects: 11, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (11/11), 1.89 KiB | 484.00 KiB/s, done.
+Total 11 (delta 0), reused 0 (delta 0)
+To https://github.com/nirmash/MyLambdaFunc.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+```
 
-## Test
+## Verify and test
 ```shell
 aws lambda invoke \
-    --function-name arn:aws:lambda:us-west-2:070336696256:function:sammi-sammi1-1DHG9OPY40OMN \
+    --function-name arn:aws:lambda:us-west-2:070336696256:function:MyLambdaFunc-LambdaFunc-CJKJKYHIT6WY \
     --invocation-type RequestResponse \
     --payload '{ "obj_name": "Bob", "body" : "brr" }' \
     --cli-binary-format raw-in-base64-out \
